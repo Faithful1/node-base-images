@@ -1,4 +1,4 @@
-Minimal active LTS Versions of Node.js Docker Images
+Minimal active Node.js LTS Versions Docker Images
 -----------------------------------------------------
 
 versions
@@ -19,8 +19,8 @@ versions
 
 built on [Alpine Linux](https://alpinelinux.org/)
 
-1. to create a base image of a specific LTS version please edit the Env variables in the dockerfile and insert the node version you would like to create an image of.
-e.g in root/Dockerfile:
+1. to create a base image of a specific LTS node version please edit the Env variables in the dockerfile and insert the node version you would like to create an image of.
+e.g in /root/Dockerfile:
 
 ```
 ENV VERSION v14.15.0 #where you specify the version you want to create
@@ -31,9 +31,9 @@ ENV YARN_VERSION v1.22.10
 Each version goes with the following tag format 
 (ie, `sda/alpine-node:<tag>`).
 
-2. RUN `chmod u+x run-docker.sh` to give our entry file execute permission
+2. RUN `chmod u+x run-build.sh` to give our entry file execute permission
 
-3. RUN ./run-docker.sh to install the specified version you have created.
+3. RUN `./run-build.sh` to create the specified version you have created.
 
 Examples TO RUN A CONTAINER ON THE NEWLY CREATED IMAGE
 -------------------------------------------------------
@@ -43,10 +43,11 @@ $ docker run --rm sda/alpine-node:14.17.3 node --version
 v14.17.3
 
 $ docker run --rm sda/alpine-node:14.15.0 node --version
+v14.15.0
 ```
 
-Example Dockerfile for your own Node.js project
------------------------------------------------
+Example Dockerfile for your own Node.js application to test the newly created image
+----------------------------------------------------------------------
 
 ```Dockerfile
 FROM sda/alpine-node:14.15.1
