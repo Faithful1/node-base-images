@@ -40,7 +40,7 @@ Examples TO RUN A CONTAINER ON THE NEWLY CREATED IMAGE
 -------------------------------------------------------
 
 ```console
-$ docker run --rm sda/alpine-node:14 node --version
+$ docker run --rm sda/alpine-node:14.17.3 node --version
 v14.17.3
 
 $ docker run --rm sda/alpine-node:14.15.0 node --version
