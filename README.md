@@ -35,7 +35,6 @@ Each version goes with the following tag format
 
 3. RUN ./run-docker.sh to install the specified version you have created.
 
-
 Examples TO RUN A CONTAINER ON THE NEWLY CREATED IMAGE
 -------------------------------------------------------
 
