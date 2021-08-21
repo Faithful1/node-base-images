@@ -19,7 +19,7 @@ versions
 
 built on [Alpine Linux](https://alpinelinux.org/)
 
-1. to build a specific LTS version please edit the Env variables in the dockerfile and insert the version you would like to create an image out of.
+1. to create a base image of a specific LTS version please edit the Env variables in the dockerfile and insert the node version you would like to create an image of.
 e.g in root/Dockerfile:
 
 ```
