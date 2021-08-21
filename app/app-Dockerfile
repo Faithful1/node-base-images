@@ -1,0 +1,28 @@
+FROM sda/alpine-node:latest
+
+# we add a user to a group
+RUN addgroup -S node && adduser -S node -G node
+
+RUN npm --version
+
+RUN node --version
+
+RUN yarn --version
+
+# create base app folder
+RUN mkdir /code
+
+WORKDIR /code
+
+# make sure to use least priviledged users and not root
+COPY --chown=node:node package.json package-lock.json ./
+
+RUN npm install
+
+COPY --chown=node:node . .
+
+EXPOSE 3001
+
+USER node
+
+CMD ["node", "index.js"]
