@@ -63,9 +63,11 @@ v14.15.1
 
 
 Example Dockerfile for your own Node.js application to test the newly created image
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
-```exampleApp/Dockerfile
+You can use the example app found in root/exampleApp folder to run a quick nodejs app on that image just to test our newly created base image
+
+```exampleApp/app-Dockerfile
 FROM sda/alpine-node:14.15.0
 
 # we add a user to a group because we dont want containers to run as root
