@@ -1,4 +1,4 @@
-FROM sda/alpine-node:14.15.1
+FROM sda/alpine-node:14.15.0
 
 # we add a user to a group
 RUN addgroup -S node && adduser -S node -G node

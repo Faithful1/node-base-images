@@ -33,7 +33,22 @@ Each version goes with the following tag format
 
 2. RUN `chmod u+x run-build.sh` to give our entry file execute permission
 
-3. RUN `./run-build.sh` to create the specified version you have created.
+3. edit `/root/run-build.sh` file to tag the image you are about to create
+
+Examples TO TAG THE IMAGE BY EDITING THE run-build.sh FILE
+-----------------------------------------------------------
+```run-build.sh
+    for tag in 14.15 14.15.0 latest ; do
+        docker build --pull -t sda/alpine-node:$tag .
+    done
+
+    #here you specified the tags you want in semver format
+```
+
+4. RUN `./run-build.sh` to create the image you have specified in the run-build.sh file.
+
+
+
 
 Examples TO RUN A CONTAINER ON THE NEWLY CREATED IMAGE
 -------------------------------------------------------
@@ -46,10 +61,11 @@ $ docker run --rm sda/alpine-node:14.15.1 node --version
 v14.15.1
 ```
 
+
 Example Dockerfile for your own Node.js application to test the newly created image
 ----------------------------------------------------------------------
 
-```Dockerfile
+```exampleApp/Dockerfile
 FROM sda/alpine-node:14.15.0
 
 # we add a user to a group because we dont want containers to run as root
