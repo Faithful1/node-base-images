@@ -39,18 +39,18 @@ Examples TO RUN A CONTAINER ON THE NEWLY CREATED IMAGE
 -------------------------------------------------------
 
 ```console
-$ docker run --rm sda/alpine-node:14.17.3 node --version
-v14.17.3
-
 $ docker run --rm sda/alpine-node:14.15.0 node --version
 v14.15.0
+
+$ docker run --rm sda/alpine-node:14.15.1 node --version
+v14.15.1
 ```
 
 Example Dockerfile for your own Node.js application to test the newly created image
 ----------------------------------------------------------------------
 
 ```Dockerfile
-FROM sda/alpine-node:14.15.1
+FROM sda/alpine-node:14.15.0
 
 # we add a user to a group because we dont want containers to run as root
 RUN addgroup -S node && adduser -S node -G node
