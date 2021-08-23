@@ -8,6 +8,6 @@
 #   . --network=host
 
 
-for tag in 14.15 14.15.0 latest ; do
-  docker build --pull -t sda/alpine-node:$tag .
+for tag in 14.15 14.15.1 latest ; do
+  docker build -t sda/alpine-node:$tag .
 done
